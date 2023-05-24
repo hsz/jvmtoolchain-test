@@ -18,3 +18,6 @@ jobs:
       - name: Check Gradle
         run: |
           gradle -q javaToolchains
+      - name: Run verifyPluginConfiguration
+        run: |
+          gradle verifyPluginConfiguration
