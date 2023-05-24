@@ -16,6 +16,9 @@ jobs:
       - name: Check Gradle
         run: |
           gradle -q javaToolchains
+      - name: List JAVA* env variables
+        run: |
+          printenv | grep JAVA
       - name: Run verifyPluginConfiguration
         run: |
           gradle verifyPluginConfiguration
