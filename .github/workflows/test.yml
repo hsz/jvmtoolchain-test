@@ -1,0 +1,18 @@
+name: Test
+on: push
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: zulu
+          java-version: |
+            17
+            11
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+      - name: Check Gradle
+        run: |
+          gradle -q javaToolchains
