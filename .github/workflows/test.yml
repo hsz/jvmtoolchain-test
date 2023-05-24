@@ -19,6 +19,7 @@ jobs:
       - name: List JAVA* env variables
         run: |
           printenv | grep JAVA
+          echo "org.gradle.java.installations.fromEnv=JAVA_HOME_11_X64,JAVA_HOME_17_X64" >> gradle.properties
       - name: Run verifyPluginConfiguration
         run: |
           gradle verifyPluginConfiguration
